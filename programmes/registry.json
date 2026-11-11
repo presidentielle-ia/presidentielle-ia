@@ -1,5 +1,5 @@
 {
-  "$comment": "Candidats suivis pour la présidentielle 2027 (liste non exhaustive : franceinfo recense 36 déclarations au 9/11/2026). statut : integre (texte disponible dans l'outil) | publie (programme officiel publié, pas encore intégré) | attendu (pas encore de programme officiel). etendue : complet | partiel. Vérifié le 2026-11-10. reutilisation : licence (licence ouverte compatible) | autorisation (accord écrit obtenu) | non (tous droits réservés, pas d'accord) ; avec REQUIRE_REUSE_RIGHTS=1, seuls licence/autorisation sont intégrés.",
+  "$comment": "Candidats suivis pour la présidentielle 2027 (liste non exhaustive : franceinfo recense 36 déclarations au 9/11/2026). statut : integre (texte disponible dans l'outil) | publie (programme officiel publié, pas encore intégré) | attendu (pas encore de programme officiel). etendue : complet | partiel. Vérifié le 2026-11-10. reutilisation : licence (licence ouverte compatible) | autorisation (accord écrit obtenu) | non (tous droits réservés, pas d'accord) ; avec REQUIRE_REUSE_RIGHTS=1, seuls licence/autorisation sont intégrés ; retire = texte retiré à la demande de l'ayant droit (tous modes).",
   "programmes": [
     {
       "id": "arthaud",

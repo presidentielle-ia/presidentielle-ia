@@ -8,6 +8,8 @@
 //   REQUIRE_REUSE_RIGHTS=1   n'intègre que les programmes dont la réutilisation
 //                            est permise (champ « reutilisation » du registre) ;
 //                            les autres sont affichés comme publiés, en attente.
+// Retrait : `"reutilisation": "retire"` dans le registre retire le texte d'un
+// programme dans tous les modes (demande d'un ayant droit).
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { existsSync } from "node:fs";
 import { spawnSync } from "node:child_process";
@@ -27,7 +29,9 @@ for (const entry of registry.programmes) {
     const r = spawnSync(process.execPath, [sourceScript.pathname], { stdio: "inherit" });
     if (r.status !== 0) console.warn(`⚠ source ${entry.id} en échec`);
   }
-  if (entry.statut === "integre" && RIGHTS && !REUSE_OK.has(entry.reutilisation)) {
+  if (entry.statut === "integre" && entry.reutilisation === "retire") {
+    programmes.push({ ...entry, statut: "publie", note: "Texte retiré à la demande de l'ayant droit ; voir le site officiel" });
+  } else if (entry.statut === "integre" && RIGHTS && !REUSE_OK.has(entry.reutilisation)) {
     // Même règle pour tous : pas d'autorisation de réutilisation → pas de texte.
     programmes.push({ ...entry, statut: "publie", note: "Programme publié ; en attente d'autorisation de reproduction" });
   } else if (entry.statut === "integre" && existsSync(dataFile)) {
