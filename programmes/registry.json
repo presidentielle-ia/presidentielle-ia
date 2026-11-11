@@ -1,22 +1,166 @@
 {
-  "$comment": "Candidats suivis pour la présidentielle 2027 (liste non exhaustive : franceinfo recense 36 déclarations au 9/11/2026). statut : integre (texte disponible dans l'outil) | publie (programme officiel publié, pas encore intégré) | attendu (pas encore de programme officiel). etendue : complet | partiel. Vérifié le 2026-11-10.",
+  "$comment": "Candidats suivis pour la présidentielle 2027 (liste non exhaustive : franceinfo recense 36 déclarations au 9/11/2026). statut : integre (texte disponible dans l'outil) | publie (programme officiel publié, pas encore intégré) | attendu (pas encore de programme officiel). etendue : complet | partiel. Vérifié le 2026-11-10. reutilisation : licence (licence ouverte compatible) | autorisation (accord écrit obtenu) | non (tous droits réservés, pas d'accord) ; avec REQUIRE_REUSE_RIGHTS=1, seuls licence/autorisation sont intégrés.",
   "programmes": [
-    { "id": "arthaud", "candidat": "Nathalie Arthaud", "parti": "Lutte ouvrière", "statut": "attendu", "source": "https://nathalie-arthaud.info", "note": "Positions publiées, pas de programme complet" },
-    { "id": "asselineau", "candidat": "François Asselineau", "parti": "UPR", "statut": "attendu", "source": "https://upr.fr/notre-programme", "note": "Programme annoncé « prochainement »" },
-    { "id": "attal", "candidat": "Gabriel Attal", "parti": "Renaissance", "titre": "Chantiers capitaux et mesures annoncées", "statut": "integre", "etendue": "partiel", "source": "https://attalpresident.fr/programme", "note": "Programme en cours de publication", "licence": "Tous droits réservés (attalpresident.fr/mentions-legales)" },
-    { "id": "batho", "candidat": "Delphine Batho", "parti": "Génération écologie", "statut": "publie", "etendue": "partiel", "source": "https://delphinebatho.fr", "note": "Priorités publiées, pas de programme complet" },
-    { "id": "becht", "candidat": "Olivier Becht", "parti": "Divers centre", "titre": "Projet France", "statut": "publie", "etendue": "partiel", "source": "https://becht2027.fr/projet-france/" },
-    { "id": "bertrand", "candidat": "Xavier Bertrand", "parti": "Nous France", "statut": "attendu", "source": "https://nousfrance.fr", "note": "Pages programme encore vides" },
-    { "id": "dupont-aignan", "candidat": "Nicolas Dupont-Aignan", "nom": "Dupont-Aignan", "parti": "Debout la France", "statut": "attendu", "source": "https://www.debout-la-france.fr/notre-projet/", "note": "Mise à jour du projet pour 2027 en cours" },
-    { "id": "glucksmann", "candidat": "Raphaël Glucksmann", "parti": "Place publique / PS", "statut": "publie", "etendue": "partiel", "source": "https://glucks2027.fr/wp-content/uploads/2026/11/livret_progr_revolution_ecologique_2027.pdf", "note": "1er livret publié (écologie), programme annoncé pour décembre" },
-    { "id": "le-pen", "candidat": "Marine Le Pen", "nom": "Le Pen", "parti": "Rassemblement national", "statut": "attendu", "source": "https://marinelepen.com", "note": "Pas encore de programme 2027 publié" },
-    { "id": "lisnard", "candidat": "David Lisnard", "parti": "Nouvelle Énergie", "statut": "attendu", "source": "https://www.unenouvelleenergie.fr/notre-programme/", "note": "Site de campagne annoncé" },
-    { "id": "lfi", "candidat": "Jean-Luc Mélenchon", "parti": "La France insoumise", "titre": "L'Avenir en commun (édition 2027)", "statut": "integre", "etendue": "complet", "source": "https://melenchon2027.fr/programme/livre/", "publieLe": "2026-11-06", "licence": "© La France insoumise, tous droits réservés" },
-    { "id": "philippe", "candidat": "Édouard Philippe", "parti": "Horizons", "titre": "Premières orientations", "statut": "integre", "etendue": "partiel", "source": "https://www.edouardphilippe.fr/#priorites", "note": "Premières orientations, programme complet à venir", "licence": "Tous droits réservés" },
-    { "id": "retailleau", "candidat": "Bruno Retailleau", "parti": "Les Républicains", "titre": "Le projet", "statut": "integre", "etendue": "partiel", "source": "https://www.avecretailleau.fr/projet", "note": "11 thèmes publiés, 7 encore en construction", "licence": "Partage non commercial autorisé avec mention de la source" },
-    { "id": "roussel", "candidat": "Fabien Roussel", "parti": "PCF", "statut": "attendu", "source": "https://www.fabienroussel2027.fr", "note": "Manifeste publié, pas encore de programme" },
-    { "id": "ruffin", "candidat": "François Ruffin", "parti": "Debout !", "statut": "publie", "etendue": "partiel", "source": "https://nouspresident.fr/notre-programme/", "note": "Cahiers de campagne publiés" },
-    { "id": "tondelier", "candidat": "Marine Tondelier", "parti": "Les Écologistes", "titre": "Projet 2027", "statut": "publie", "etendue": "complet", "source": "https://lesecologistes.fr/pages/6ImK65GKUnvibm33WGkjkj/projet-2027", "note": "557 mesures, intégration en cours (candidature soumise au vote du parti le 13 décembre)" },
-    { "id": "zemmour", "candidat": "Éric Zemmour", "parti": "Reconquête", "statut": "publie", "etendue": "partiel", "source": "https://www.ericzemmour.fr/priorites", "note": "5 priorités publiées" }
+    {
+      "id": "arthaud",
+      "candidat": "Nathalie Arthaud",
+      "parti": "Lutte ouvrière",
+      "statut": "attendu",
+      "source": "https://nathalie-arthaud.info",
+      "note": "Positions publiées, pas de programme complet"
+    },
+    {
+      "id": "asselineau",
+      "candidat": "François Asselineau",
+      "parti": "UPR",
+      "statut": "attendu",
+      "source": "https://upr.fr/notre-programme",
+      "note": "Programme annoncé « prochainement »"
+    },
+    {
+      "id": "attal",
+      "candidat": "Gabriel Attal",
+      "parti": "Renaissance",
+      "titre": "Chantiers capitaux et mesures annoncées",
+      "statut": "integre",
+      "etendue": "partiel",
+      "source": "https://attalpresident.fr/programme",
+      "note": "Programme en cours de publication",
+      "licence": "Tous droits réservés (attalpresident.fr/mentions-legales)",
+      "reutilisation": "non"
+    },
+    {
+      "id": "batho",
+      "candidat": "Delphine Batho",
+      "parti": "Génération écologie",
+      "statut": "publie",
+      "etendue": "partiel",
+      "source": "https://delphinebatho.fr",
+      "note": "Priorités publiées, pas de programme complet"
+    },
+    {
+      "id": "becht",
+      "candidat": "Olivier Becht",
+      "parti": "Divers centre",
+      "titre": "Projet France",
+      "statut": "publie",
+      "etendue": "partiel",
+      "source": "https://becht2027.fr/projet-france/"
+    },
+    {
+      "id": "bertrand",
+      "candidat": "Xavier Bertrand",
+      "parti": "Nous France",
+      "statut": "attendu",
+      "source": "https://nousfrance.fr",
+      "note": "Pages programme encore vides"
+    },
+    {
+      "id": "dupont-aignan",
+      "candidat": "Nicolas Dupont-Aignan",
+      "nom": "Dupont-Aignan",
+      "parti": "Debout la France",
+      "statut": "attendu",
+      "source": "https://www.debout-la-france.fr/notre-projet/",
+      "note": "Mise à jour du projet pour 2027 en cours"
+    },
+    {
+      "id": "glucksmann",
+      "candidat": "Raphaël Glucksmann",
+      "parti": "Place publique / PS",
+      "statut": "publie",
+      "etendue": "partiel",
+      "source": "https://glucks2027.fr/wp-content/uploads/2026/11/livret_progr_revolution_ecologique_2027.pdf",
+      "note": "1er livret publié (écologie), programme annoncé pour décembre"
+    },
+    {
+      "id": "le-pen",
+      "candidat": "Marine Le Pen",
+      "nom": "Le Pen",
+      "parti": "Rassemblement national",
+      "statut": "attendu",
+      "source": "https://marinelepen.com",
+      "note": "Pas encore de programme 2027 publié"
+    },
+    {
+      "id": "lisnard",
+      "candidat": "David Lisnard",
+      "parti": "Nouvelle Énergie",
+      "statut": "attendu",
+      "source": "https://www.unenouvelleenergie.fr/notre-programme/",
+      "note": "Site de campagne annoncé"
+    },
+    {
+      "id": "lfi",
+      "candidat": "Jean-Luc Mélenchon",
+      "parti": "La France insoumise",
+      "titre": "L'Avenir en commun (édition 2027)",
+      "statut": "integre",
+      "etendue": "complet",
+      "source": "https://melenchon2027.fr/programme/livre/",
+      "publieLe": "2026-11-06",
+      "licence": "© La France insoumise, tous droits réservés",
+      "reutilisation": "non"
+    },
+    {
+      "id": "philippe",
+      "candidat": "Édouard Philippe",
+      "parti": "Horizons",
+      "titre": "Premières orientations",
+      "statut": "integre",
+      "etendue": "partiel",
+      "source": "https://www.edouardphilippe.fr/#priorites",
+      "note": "Premières orientations, programme complet à venir",
+      "licence": "Tous droits réservés",
+      "reutilisation": "non"
+    },
+    {
+      "id": "retailleau",
+      "candidat": "Bruno Retailleau",
+      "parti": "Les Républicains",
+      "titre": "Le projet",
+      "statut": "integre",
+      "etendue": "partiel",
+      "source": "https://www.avecretailleau.fr/projet",
+      "note": "11 thèmes publiés, 7 encore en construction",
+      "licence": "Partage non commercial autorisé avec mention de la source",
+      "reutilisation": "licence"
+    },
+    {
+      "id": "roussel",
+      "candidat": "Fabien Roussel",
+      "parti": "PCF",
+      "statut": "attendu",
+      "source": "https://www.fabienroussel2027.fr",
+      "note": "Manifeste publié, pas encore de programme"
+    },
+    {
+      "id": "ruffin",
+      "candidat": "François Ruffin",
+      "parti": "Debout !",
+      "statut": "publie",
+      "etendue": "partiel",
+      "source": "https://nouspresident.fr/notre-programme/",
+      "note": "Cahiers de campagne publiés"
+    },
+    {
+      "id": "tondelier",
+      "candidat": "Marine Tondelier",
+      "parti": "Les Écologistes",
+      "titre": "Projet 2027",
+      "statut": "publie",
+      "etendue": "complet",
+      "source": "https://lesecologistes.fr/pages/6ImK65GKUnvibm33WGkjkj/projet-2027",
+      "note": "557 mesures, intégration en cours (candidature soumise au vote du parti le 13 décembre)"
+    },
+    {
+      "id": "zemmour",
+      "candidat": "Éric Zemmour",
+      "parti": "Reconquête",
+      "statut": "publie",
+      "etendue": "partiel",
+      "source": "https://www.ericzemmour.fr/priorites",
+      "note": "5 priorités publiées"
+    }
   ]
 }
