@@ -40,7 +40,7 @@ const programmeEnum = z
   .enum(IDS)
   .describe("Identifiant du programme : " + INTEGRATED.map((p) => `${p.id} = ${label(p)}`).join(" ; "));
 
-const fr = (d?: string | null) => (d ? new Date(`${d}T12:00:00Z`).toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" }) : null);
+const fr = (d?: string | null) => (d ? new Date(`${d}T12:00:00Z`).toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" }).replace(/^1 /, "1er ") : null);
 const datesLine = (p: { dates?: Integrated["dates"] }) => {
   const d = p.dates;
   if (!d) return "";
