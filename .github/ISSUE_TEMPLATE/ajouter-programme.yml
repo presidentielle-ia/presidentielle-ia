@@ -1,0 +1,30 @@
+name: Ajouter un programme
+description: Signaler le programme officiel d'un candidat à la présidentielle 2027
+title: "[Programme] "
+labels: [programme]
+body:
+  - type: input
+    id: candidat
+    attributes: { label: Candidat·e, placeholder: "Prénom Nom" }
+    validations: { required: true }
+  - type: input
+    id: parti
+    attributes: { label: Parti ou mouvement }
+    validations: { required: true }
+  - type: input
+    id: lien
+    attributes:
+      label: Lien vers le programme officiel
+      description: Uniquement une source officielle (site du candidat ou du parti).
+      placeholder: https://
+    validations: { required: true }
+  - type: dropdown
+    id: format
+    attributes: { label: Format, options: [Pages web, PDF, Les deux, Je ne sais pas] }
+  - type: checkboxes
+    id: officiel
+    attributes:
+      label: Vérification
+      options:
+        - label: Ce lien est publié par le candidat ou son parti (pas un résumé de presse ni un site tiers).
+          required: true

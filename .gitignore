@@ -1,0 +1,10 @@
+node_modules/
+dist/
+.cache/
+.wrangler/
+.dev.vars
+.env*
+# Textes des programmes : propriété de leurs auteurs, jamais versionnés.
+# `pnpm scrape` les télécharge depuis les sites officiels.
+data/
+test/fixtures/bundle.json

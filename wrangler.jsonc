@@ -1,0 +1,17 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "presidentielle-ia-mcp",
+  "main": "src/worker.ts",
+  "compatibility_date": "2026-11-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "workers_dev": true,
+  "preview_urls": false,
+  // Les textes ne sont pas versionnés (droits d'auteur) : `pnpm scrape` les
+  // télécharge depuis les sites officiels avant le build.
+  "build": { "command": "node scripts/build.mjs" },
+  // 300 requêtes MCP / minute / IP (les clients hébergés partagent des IP).
+  "ratelimits": [{ "name": "MCP_LIMITER", "namespace_id": "2027", "simple": { "limit": 300, "period": 60 } }],
+  // Pas de journaux de requêtes : les questions sur un programme politique
+  // peuvent révéler des opinions (donnée sensible, RGPD art. 9).
+  "observability": { "enabled": false }
+}

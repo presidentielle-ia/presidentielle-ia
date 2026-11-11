@@ -1,0 +1,41 @@
+{
+  "name": "presidentielle-ia",
+  "version": "0.1.0",
+  "private": false,
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "scrape": "node scripts/build.mjs --fetch",
+    "build": "node scripts/build.mjs && tsc -p tsconfig.json",
+    "typecheck": "node scripts/build.mjs && tsc -p tsconfig.json --noEmit",
+    "test": "node test/make-fixture.mjs && vitest run",
+    "dev": "wrangler dev",
+    "start": "node dist/node.js",
+    "stdio": "node dist/stdio.js",
+    "deploy": "wrangler deploy",
+    "bundle": "node scripts/build.mjs"
+  },
+  "dependencies": {
+    "@hono/node-server": "^2.1.6",
+    "@modelcontextprotocol/sdk": "1.32.2",
+    "minisearch": "^7.2.0",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^5.20261109.1",
+    "@types/node": "^26.6.6",
+    "node-html-parser": "^9.0.7",
+    "typescript": "^7.0.2",
+    "vitest": "^5.1.0",
+    "wrangler": "^4.159.0"
+  },
+  "packageManager": "pnpm@11.9.0",
+  "description": "Serveur MCP open source pour interroger les programmes officiels de la présidentielle 2027 depuis n'importe quel assistant IA (projet citoyen indépendant)",
+  "license": "AGPL-3.0-only",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/presidentielle-ia/presidentielle-ia.git"
+  }
+}
