@@ -46,6 +46,8 @@ export interface Programme {
   licence?: string;
   note?: string;
   retrievedAt?: string;
+  /** dates AAAA-MM-JJ : publication du programme, dernière mise à jour connue, dernière vérification */
+  dates?: { publication: string | null; miseAJour: string | null; verification: string | null };
   stats?: { parts: number; chapters: number; sections: number; measures: number; keyMeasures: number };
   parts?: Part[];
 }

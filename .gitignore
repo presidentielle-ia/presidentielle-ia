@@ -8,3 +8,4 @@ dist/
 # `pnpm scrape` les télécharge depuis les sites officiels.
 data/
 test/fixtures/bundle.json
+*.bak

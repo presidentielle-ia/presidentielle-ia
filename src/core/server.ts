@@ -30,6 +30,7 @@ Règles d'usage :
 - Sources : appuie chaque affirmation sur le texte renvoyé par les outils. Cite mot pour mot, avec l'identifiant de la mesure (ex. lfi:p3c1s7k1) et son lien officiel.
 - Certains programmes sont partiels (encore en cours de publication) : précise-le quand tu compares, une absence de mesure peut simplement venir d'un texte incomplet.
 - Si un programme ne traite pas un sujet, dis-le au lieu de deviner. Lors d'une comparaison, signale toujours les candidats dont le programme n'est pas encore disponible ici, pour ne pas laisser croire qu'ils n'ont pas de position.
+- Les programmes évoluent pendant la campagne : lister_programmes donne pour chacun ses dates de publication, de dernière mise à jour et de dernière vérification. Mentionne-les si la fraîcheur compte.
 - Méthode : lister_programmes pour savoir ce qui est disponible ; comparer pour un sujet transversal ; rechercher puis lire_section pour le détail.
 - Service citoyen indépendant et non officiel (${SITE_URL}), affilié à aucun parti.`;
 
@@ -38,6 +39,15 @@ const IDS = INTEGRATED.map((p) => p.id) as [string, ...string[]];
 const programmeEnum = z
   .enum(IDS)
   .describe("Identifiant du programme : " + INTEGRATED.map((p) => `${p.id} = ${label(p)}`).join(" ; "));
+
+const fr = (d?: string | null) => (d ? new Date(`${d}T12:00:00Z`).toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" }) : null);
+const datesLine = (p: { dates?: Integrated["dates"] }) => {
+  const d = p.dates;
+  if (!d) return "";
+  return [d.publication && `publié le ${fr(d.publication)}`, d.miseAJour && `mis à jour le ${fr(d.miseAJour)}`, d.verification && `vérifié le ${fr(d.verification)}`]
+    .filter(Boolean)
+    .join(", ");
+};
 
 const text = (t: string) => ({ content: [{ type: "text" as const, text: t }] });
 const error = (t: string) => ({ content: [{ type: "text" as const, text: t }], isError: true });
@@ -100,7 +110,8 @@ export function createServer(): McpServer {
         const scope = p.etendue === "partiel" ? " (programme partiel)" : "";
         const head = `- **${label(p)}** — ${STATUS_LABEL[p.statut]}${scope}`;
         if (p.statut === "integre" && p.stats) {
-          lines.push(`${head} · id \`${p.id}\` · « ${p.titre} » · ${p.stats.measures} mesures · ${p.source} (texte relevé le ${p.retrievedAt})${p.note ? ` · ${p.note}` : ""}`);
+          const dl = datesLine(p);
+          lines.push(`${head} · id \`${p.id}\` · « ${p.titre} » · ${p.stats.measures} mesures · ${p.source}${dl ? ` (${dl})` : ""}${p.note ? ` · ${p.note}` : ""}`);
         } else {
           lines.push(`${head}${p.source ? ` · ${p.source}` : ""}${p.note ? ` · ${p.note}` : ""}`);
         }

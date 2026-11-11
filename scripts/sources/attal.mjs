@@ -19,6 +19,8 @@ const items = (xml) =>
       link: decode(field("link")),
       description: decode(field("description")),
       html: field("content:encoded").replace(/^<!\[CDATA\[|\]\]>$/g, ""),
+      pubDate: field("pubDate"),
+      updated: field("atom:updated"),
       categories: [...it.matchAll(/<category>([\s\S]*?)<\/category>/g)].map((m) => decode(m[1])),
     };
   });
@@ -57,10 +59,17 @@ const chapters = [...byTheme.entries()]
     };
   });
 
+// Dates officielles du flux : première publication et dernière modification.
+const toIso = (d) => (d && !Number.isNaN(Date.parse(d)) ? new Date(d).toISOString().slice(0, 10) : null);
+const pubs = mesures.map((m) => toIso(m.pubDate)).filter(Boolean).sort();
+const upds = mesures.map((m) => toIso(m.updated) ?? toIso(m.pubDate)).filter(Boolean).sort();
+
 await save(
   ID,
   {
     title: "Mesures de Gabriel Attal pour 2027",
+    publishedAt: pubs[0] ?? null,
+    sourceUpdatedAt: upds.at(-1) ?? null,
     source: `${BASE}/programme`,
     retrievedAt: new Date().toISOString().slice(0, 10),
     parts: [

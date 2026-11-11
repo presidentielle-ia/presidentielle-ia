@@ -4,7 +4,12 @@ import { existsSync } from "node:fs";
 
 export const UA = "presidentielle-ia-scraper (+https://presidentielle-ia.org)";
 export const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
-export const flags = { offline: process.argv.includes("--offline"), ifMissing: process.argv.includes("--if-missing") };
+export const flags = {
+  offline: process.argv.includes("--offline"),
+  ifMissing: process.argv.includes("--if-missing"),
+  // FRESH=1 : ignore le cache et retélécharge (vérification quotidienne).
+  fresh: process.env.FRESH === "1",
+};
 
 /** Télécharge une URL avec cache disque (.cache/<id>/), 1 s entre deux requêtes. */
 export function fetcher(id) {
@@ -12,7 +17,7 @@ export function fetcher(id) {
   return async function get(url) {
     await mkdir(cache, { recursive: true });
     const file = new URL(url.replace(/^https?:\/\//, "").replace(/[^a-z0-9.-]+/gi, "_").slice(0, 180), cache);
-    if (existsSync(file)) return readFile(file, "utf8");
+    if (!flags.fresh && existsSync(file)) return readFile(file, "utf8");
     if (flags.offline) throw new Error(`absent du cache : ${url}`);
     const res = await fetch(url, { headers: { "user-agent": UA } });
     if (!res.ok) throw new Error(`${res.status} sur ${url}`);

@@ -32,10 +32,17 @@ const chapters = themes.map((t, i) => {
   };
 });
 
+// Dates officielles fournies par l'API : création et dernière modification.
+const isoDates = (key) => [...api.mesures, ...api.themes].map((x) => x[key]).filter(Boolean).sort();
+const created = isoDates("creeIso");
+const updated = isoDates("majIso");
+
 await save(
   ID,
   {
     title: "Projet de Bruno Retailleau pour 2027",
+    publishedAt: created[0]?.slice(0, 10) ?? null,
+    sourceUpdatedAt: updated.at(-1)?.slice(0, 10) ?? null,
     source: `${BASE}/projet`,
     retrievedAt: new Date().toISOString().slice(0, 10),
     parts: [

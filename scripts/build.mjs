@@ -20,6 +20,7 @@ const STRICT = process.env.STRICT_DATA === "1";
 const RIGHTS = process.env.REQUIRE_REUSE_RIGHTS === "1";
 const REUSE_OK = new Set(["licence", "autorisation"]);
 
+const meta = existsSync(new URL("data/meta.json", root)) ? JSON.parse(await readFile(new URL("data/meta.json", root), "utf8")) : {};
 const programmes = [];
 const missing = [];
 for (const entry of registry.programmes) {
@@ -36,7 +37,16 @@ for (const entry of registry.programmes) {
     programmes.push({ ...entry, statut: "publie", note: "Programme publié ; en attente d'autorisation de reproduction" });
   } else if (entry.statut === "integre" && existsSync(dataFile)) {
     const data = JSON.parse(await readFile(dataFile, "utf8"));
-    programmes.push({ ...entry, retrievedAt: data.retrievedAt, stats: data.stats, parts: data.parts });
+    const m = meta[entry.id] ?? {};
+    // Dates : publication et mise à jour officielles si la source les donne,
+    // sinon celles que nous avons constatées ; vérification = dernier passage.
+    const updates = [data.sourceUpdatedAt, m.updatedAt].filter(Boolean).sort();
+    const dates = {
+      publication: data.publishedAt ?? entry.publieLe ?? null,
+      miseAJour: updates.at(-1) ?? null,
+      verification: m.checkedAt ?? data.retrievedAt,
+    };
+    programmes.push({ ...entry, retrievedAt: data.retrievedAt, dates, stats: data.stats, parts: data.parts });
   } else {
     if (entry.statut === "integre") missing.push(entry.id);
     programmes.push({ ...entry, statut: entry.statut === "integre" ? "publie" : entry.statut });

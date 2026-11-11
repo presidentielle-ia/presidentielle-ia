@@ -18,9 +18,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 async function fetchPage(path) {
   const file = new URL(path.replace(/^\/|\/$/g, "").replaceAll("/", "__") + ".html", CACHE);
-  if (OFFLINE || existsSync(file)) {
-    if (existsSync(file)) return readFile(file, "utf8");
-  }
+  if (process.env.FRESH !== "1" && existsSync(file)) return readFile(file, "utf8");
   if (OFFLINE) throw new Error(`absent du cache : ${path}`);
   const res = await fetch(BASE + path, { headers: { "user-agent": UA } });
   if (!res.ok) throw new Error(`${res.status} sur ${path}`);
