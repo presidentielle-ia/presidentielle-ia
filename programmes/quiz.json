@@ -1,0 +1,327 @@
+{
+ "$comment": "Sélection des affirmations du quiz Présidentielle IA. Critères publics : mesure concrète, compréhensible seule, représentative, sur laquelle on peut être d'accord ou non ; au plus une par thème et par candidat ; aucun jugement sur le fond. Sélection assistée par IA (Claude Fable 5.1) puis vérification automatique que chaque extrait est une citation mot pour mot.",
+ "genereLe": "2026-11-11",
+ "themes": {
+  "retraites": {
+   "attal": {
+    "id": "attal:p1c17s1m7",
+    "extrait": "Une part de capitalisation dans le système de retraite, dont l'épargne finance l'innovation française."
+   },
+   "lfi": {
+    "id": "lfi:p3c1s7k1",
+    "extrait": "abaisser l’âge de départ jusqu’à restaurer le droit à la retraite à 60 ans à taux plein pour 40 annuités de cotisations"
+   },
+   "philippe": {
+    "id": "philippe:p1c2s3m3",
+    "extrait": "porter progressivement l'âge de départ à 65 ans et la durée de cotisation à 45 ans en moins de dix ans"
+   },
+   "retailleau": {
+    "id": "retailleau:p1c11s1m1",
+    "extrait": "Pouvoir partir dès 63 ans, à 65 ans pour un taux plein garanti"
+   }
+  },
+  "ecole": {
+   "attal": {
+    "id": "attal:p1c5s1m11",
+    "extrait": "Un examen en fin de CM2 pour vérifier la lecture, l'écriture et le calcul avant l'entrée au collège."
+   },
+   "lfi": {
+    "id": "lfi:p4c2s3m1.4",
+    "extrait": "assurer à tous les élèves en collège et lycée les trois séances annuelles d’éducation à la vie affective, relationnelle et à la sexualité (EVARS) prévues par la loi"
+   },
+   "philippe": {
+    "id": "philippe:p1c4s2m6",
+    "extrait": "Augmenter de 20 % la rémunération moyenne des enseignants sur le quinquennat"
+   },
+   "retailleau": {
+    "id": "retailleau:p1c2s1m5",
+    "extrait": "Instaurer un examen d'entrée en sixième qui déterminera l'affectation du collégien dans des groupes de niveau"
+   }
+  },
+  "sante": {
+   "attal": {
+    "id": "attal:p1c13s1m2",
+    "extrait": "Un assistant médical d'intelligence artificielle pour chaque Français."
+   },
+   "lfi": {
+    "id": "lfi:p4c4s4m7.3",
+    "extrait": "Réguler l’installation des médecins"
+   },
+   "philippe": {
+    "id": "philippe:p1c2s2m2",
+    "extrait": "Stabiliser les dépenses de santé en dépensant mieux, en misant sur la prévention et les transformations technologiques plutôt que sur la seule hausse des moyens."
+   },
+   "retailleau": null
+  },
+  "logement": {
+   "attal": {
+    "id": "attal:p1c13s1m1",
+    "extrait": "Un droit à la climatisation et à la rénovation, pour que chacun puisse protéger son logement des canicules."
+   },
+   "lfi": {
+    "id": "lfi:p5c3s4m4",
+    "extrait": "Geler les loyers le temps de déployer un encadrement des loyers partout sur le territoire et à la baisse dans les grandes villes"
+   },
+   "philippe": {
+    "id": "philippe:p1c3s4m4",
+    "extrait": "Donner de l'ombre à nos villes en multipliant les plantations d'arbres et en levant les règles d'urbanisme qui freinent l'adaptation des espaces publics et des logements."
+   },
+   "retailleau": {
+    "id": "retailleau:p1c6s1m10",
+    "extrait": "Supprimer l'encadrement des loyers"
+   }
+  },
+  "energie-nucleaire": {
+   "attal": {
+    "id": "attal:p1c6s1m5",
+    "extrait": "ramener la part des énergies fossiles de près de 60 % à 30 % en 2035, avec une électricité décarbonée, abondante et moins chère"
+   },
+   "lfi": {
+    "id": "lfi:p1c3s4m3",
+    "extrait": "Planifier la fermeture progressive des centrales nucléaires existantes en ne prolongeant pas au-delà de 60 ans leur durée de vie et arrêter le programme de nouveau nucléaire (EPR2)"
+   },
+   "philippe": {
+    "id": "philippe:p1c3s3m1",
+    "extrait": "Assurer notre souveraineté énergétique en relançant le nucléaire (lancement de 8 EPR supplémentaires en plus des 6 déjà prévus)"
+   },
+   "retailleau": {
+    "id": "retailleau:p1c8s1m1",
+    "extrait": "Prolonger les centrales nucléaires jusqu’à 80 ans"
+   }
+  },
+  "immigration": {
+   "attal": {
+    "id": "attal:p1c9s1m3",
+    "extrait": "Un système à points, inspiré du Canada, qui détermine les admissions au séjour selon des critères simples."
+   },
+   "lfi": {
+    "id": "lfi:p6c3s2m13",
+    "extrait": "Garantir l’accès à l’aide médicale d’État (AME)"
+   },
+   "philippe": {
+    "id": "philippe:p1c1s3m2",
+    "extrait": "Dénoncer l'accord de 1968 avec l'Algérie pour reprendre le contrôle des flux migratoires."
+   },
+   "retailleau": {
+    "id": "retailleau:p1c1s1m10",
+    "extrait": "Conditionner l'accès des étrangers aux prestations sociales à cinq ans de séjour régulier et de travail en France"
+   }
+  },
+  "securite": {
+   "attal": {
+    "id": "attal:p1c10s1m7",
+    "extrait": "Interconnecter les fichiers de la police, de la gendarmerie, de la justice et de l'Éducation nationale, pour qu'un signalement ne se perde plus entre deux administrations."
+   },
+   "lfi": {
+    "id": "lfi:p3c4s4k1",
+    "extrait": "Mettre en place le récépissé de contrôle d’identité par les agents de police et la gendarmerie pour lutter contre le contrôle au faciès"
+   },
+   "philippe": {
+    "id": "philippe:p1c1s2m1",
+    "extrait": "Créer un « état d'urgence narco » avec des moyens juridiques d'exception limités dans le temps et dans l'espace, allant jusqu'à l'utilisation ciblée de la reconnaissance faciale."
+   },
+   "retailleau": {
+    "id": "retailleau:p1c1s1m7",
+    "extrait": "Inscrire dans la Constitution le droit à la sécurité, à égalité avec les libertés fondamentales."
+   }
+  },
+  "justice": {
+   "attal": {
+    "id": "attal:p1c10s1m10",
+    "extrait": "3 000 magistrats et greffiers supplémentaires pour raccourcir les délais de jugement."
+   },
+   "lfi": {
+    "id": "lfi:p5c2s5k1",
+    "extrait": "Assurer un meilleur accès de toutes et tous à la justice en augmentant notamment l’aide juridictionnelle et en veillant au retour des tribunaux de proximité"
+   },
+   "philippe": {
+    "id": "philippe:p1c1s1m2",
+    "extrait": "Mettre en place des peines planchers pour les infractions les plus graves"
+   },
+   "retailleau": {
+    "id": "retailleau:p1c6s1m12",
+    "extrait": "En cas de squat, engager la procédure dès le constat des forces de l'ordre ou d'un commissaire de justice, avec expulsion sous dix jours maximum"
+   }
+  },
+  "pouvoir-d-achat": {
+   "attal": {
+    "id": "attal:p1c17s1m2",
+    "extrait": "250 euros nets de plus par mois au niveau du salaire médian, l'équivalent d'un treizième mois pour les classes moyennes qui travaillent."
+   },
+   "lfi": {
+    "id": "lfi:p2c2s3k1",
+    "extrait": "Porter immédiatement le SMIC mensuel à 1 700 euros net et indexer les salaires sur l’inflation dans le privé comme dans la fonction publique"
+   },
+   "philippe": {
+    "id": "philippe:p1c2s3m2",
+    "extrait": "lorsqu'une entreprise décide, après discussion interne, de travailler plus longtemps, exonérer ces heures de cotisations sociales et d'impôt sur le revenu"
+   },
+   "retailleau": {
+    "id": "retailleau:p1c3s1m1",
+    "extrait": "Baisser les cotisations de 30 milliards d'euros par an. La moitié revient directement aux salariés, soit environ 500 euros nets par an au salaire médian"
+   }
+  },
+  "impots": {
+   "attal": {
+    "id": "attal:p1c8s1m1",
+    "extrait": "Aucune hausse d'impôts pendant les cinq ans du mandat : le redressement passe par les économies, pas par les impôts."
+   },
+   "lfi": {
+    "id": "lfi:p2c2s2m2",
+    "extrait": "Rétablir et renforcer l’impôt de solidarité sur la fortune (ISF) incluant un volet climatique visant à taxer les gros pollueurs"
+   },
+   "philippe": {
+    "id": "philippe:p1c4s3m2",
+    "extrait": "Supprimer l'impôt sur le revenu pendant les trois premières années de l'enfant pour les classes moyennes"
+   },
+   "retailleau": {
+    "id": "retailleau:p1c4s1m5",
+    "extrait": "Engager plus de 25 milliards d'euros d'allègements sur le coût du travail"
+   }
+  },
+  "ecologie-climat": {
+   "attal": {
+    "id": "attal:p1c5s1m7",
+    "extrait": "Un plan d'urgence pour rafraîchir les écoles et les établissements médico-sociaux, que les canicules rendent impraticables plusieurs semaines par an."
+   },
+   "lfi": {
+    "id": "lfi:p1c2s3m3",
+    "extrait": "Instaurer des droits de douane sur des critères écologiques (émissions carbone, pollution, consommation d’eau)"
+   },
+   "philippe": {
+    "id": "philippe:p1c3s4m6",
+    "extrait": "Créer un fonds unique d'adaptation au changement climatique, réunissant le fonds Barnier et le Fonds vert, doté de 2 milliards d'euros par an"
+   },
+   "retailleau": {
+    "id": "retailleau:p1c5s1m3",
+    "extrait": "Supprimer l'Office français de la biodiversité"
+   }
+  },
+  "agriculture": {
+   "attal": {
+    "id": "attal:p1c4s1m5",
+    "extrait": "Une fiscalité du portage foncier revue pour faciliter la transmission des exploitations et l'installation des jeunes agriculteurs."
+   },
+   "lfi": {
+    "id": "lfi:p1c3s8m1",
+    "extrait": "Garantir des prix rémunérateurs aux producteurs en instaurant des prix planchers pour les agriculteurs"
+   },
+   "philippe": {
+    "id": "philippe:p1c2s1m5",
+    "extrait": "inscription du développement agricole dans la Charte de l'environnement"
+   },
+   "retailleau": {
+    "id": "retailleau:p1c5s1m6",
+    "extrait": "Reconnaître les projets de stockage d'eau à usage agricole comme relevant de l'intérêt général majeur."
+   }
+  },
+  "travail-emploi": {
+   "attal": {
+    "id": "attal:p1c17s1m6",
+    "extrait": "Une Constitution du travail de cinquante pages au maximum, qui fixe les grands principes et renvoie le reste à la négociation."
+   },
+   "lfi": {
+    "id": "lfi:p3c1s5m1",
+    "extrait": "Abroger la loi dite « France Travail » et l’obligation de réaliser 15 heures d’activité hebdomadaire contre un revenu de remplacement"
+   },
+   "philippe": {
+    "id": "philippe:p1c2s1m2",
+    "extrait": "Permettre aux entreprises de fixer librement le temps de travail pour sortir des 35h"
+   },
+   "retailleau": {
+    "id": "retailleau:p1c3s1m3",
+    "extrait": "Créer un Revenu d'incitation à l'activité en remplacement du RSA, de la prime d'activité et de l'allocation de solidarité spécifique. Sans activité ni revenu : 300 euros par mois"
+   }
+  },
+  "europe": {
+   "attal": {
+    "id": "attal:p1c11s1m3",
+    "extrait": "Un bouclier européen capable d'intercepter les missiles et les drones russes, construit avec une coalition de pays volontaires."
+   },
+   "lfi": {
+    "id": "lfi:p2c3s4m1",
+    "extrait": "Exiger de l’Union européenne (UE) que la BCE soulage les États membres en annulant ou en transformant en dettes perpétuelles à taux nul la part de dette des États qu’elle possède"
+   },
+   "philippe": {
+    "id": "philippe:p1c3s3m3",
+    "extrait": "Instaurer un prix du carbone aux frontières européennes pour protéger nos industries qui décarbonent face à une concurrence déloyale."
+   },
+   "retailleau": {
+    "id": "retailleau:p1c1s1m4",
+    "extrait": "Écarter le droit européen lorsqu'il excède ses compétences"
+   }
+  },
+  "institutions": {
+   "attal": {
+    "id": "attal:p1c2s1m3",
+    "extrait": "Une journée par an consacrée à des référendums sur les grands choix du pays."
+   },
+   "lfi": {
+    "id": "lfi:p5c1s1k1",
+    "extrait": "Instaurer le référendum d’initiative citoyenne (RIC), par lequel les citoyens qui réunissent suffisamment de signatures peuvent révoquer des élus, proposer ou abroger une loi"
+   },
+   "philippe": {
+    "id": "philippe:p1c2s2m1",
+    "extrait": "Inscrire dans la Constitution une règle d'or de maîtrise des déficits via un référendum"
+   },
+   "retailleau": {
+    "id": "retailleau:p1c1s1m2",
+    "extrait": "lorsque le Conseil constitutionnel censurera une loi, le Président de la République pourra en appeler au peuple, ou au Congrès, pour désavouer cette décision et l'autoriser à promulguer la loi"
+   }
+  },
+  "intelligence-artificielle": {
+   "attal": {
+    "id": "attal:p1c5s1m15",
+    "extrait": "Un tuteur d'intelligence artificielle gratuit, sécurisé, souverain et validé par l'Éducation nationale pour chaque élève."
+   },
+   "lfi": {
+    "id": "lfi:p4c7s3m8",
+    "extrait": "Obliger à signaler toute intervention d’une IA sur ses productions (textes, images)"
+   },
+   "philippe": {
+    "id": "philippe:p1c3s1m1",
+    "extrait": "Développer une infrastructure d'intelligence artificielle européenne souveraine, en soutenant nos champions et en doublant notre capacité de calcul en cinq ans."
+   },
+   "retailleau": {
+    "id": "retailleau:p1c10s1m10",
+    "extrait": "Rendre aux services publics, grâce à l'intelligence artificielle, l'équivalent de 250 000 emplois à temps plein de temps de travail à l'horizon 2032"
+   }
+  },
+  "defense": {
+   "attal": {
+    "id": "attal:p1c11s1m5",
+    "extrait": "Diviser au moins par deux la dépendance des équipements militaires aux fournisseurs hors d'Europe."
+   },
+   "lfi": {
+    "id": "lfi:p6c2s2m10",
+    "extrait": "Organiser une capacité de projection des forces armées françaises, dont le déploiement se ferait exclusivement dans le cadre d’un mandat de l’ONU"
+   },
+   "philippe": {
+    "id": "philippe:p1c1s4m1",
+    "extrait": "Porter le nombre de réservistes de 45 000 à 250 000 et le service militaire volontaire de 3 000 à 50 000 places par an."
+   },
+   "retailleau": {
+    "id": "retailleau:p1c10s1m13",
+    "extrait": "Multiplier par cinq les moyens de l’IA de défense"
+   }
+  },
+  "famille": {
+   "attal": {
+    "id": "attal:p1c7s1m3",
+    "extrait": "Ne plus imposer les pensions alimentaires perçues pour les enfants."
+   },
+   "lfi": {
+    "id": "lfi:p3c3s1m5",
+    "extrait": "Remplacer le congé paternité et le congé maternité actuels par un congé d’accueil de l’enfant, identique et obligatoire pour les deux parents, d’une durée de 20 semaines par parent"
+   },
+   "philippe": {
+    "id": "philippe:p1c4s2m11",
+    "extrait": "Créer une « amende de responsabilisation scolaire », inspirée du modèle britannique, pour les parents d'enfants harceleurs, perturbateurs ou absentéistes et les parents violents."
+   },
+   "retailleau": {
+    "id": "retailleau:p1c7s1m1",
+    "extrait": "Fusionner douze dispositifs en un Revenu familial de 240 euros par enfant, versé chaque mois à tous, dès le premier enfant, de la naissance à dix-huit ans."
+   }
+  }
+ }
+}
