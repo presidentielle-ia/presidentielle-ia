@@ -86,9 +86,10 @@
       "id": "lisnard",
       "candidat": "David Lisnard",
       "parti": "Nouvelle Énergie",
-      "statut": "attendu",
+      "statut": "publie",
+      "etendue": "partiel",
       "source": "https://www.unenouvelleenergie.fr/notre-programme/",
-      "note": "Site de campagne annoncé"
+      "note": "Programme thématique publié (5 thèmes), intégration en cours"
     },
     {
       "id": "lfi",
@@ -125,6 +126,13 @@
       "note": "11 thèmes publiés, 7 encore en construction",
       "licence": "Partage non commercial autorisé avec mention de la source",
       "reutilisation": "licence"
+    },
+    {
+      "id": "riner",
+      "candidat": "Teddy Riner",
+      "parti": "Sans étiquette",
+      "statut": "attendu",
+      "note": "Candidature annoncée le 09/11/2026"
     },
     {
       "id": "roussel",
