@@ -22,7 +22,13 @@ const TYPES: Record<string, string> = {
 
 async function staticFile(pathname: string): Promise<Response> {
   if (!SITE) return new Response("Serveur MCP Présidentielle IA : ajoute /mcp à cette adresse dans ton assistant IA.\n");
-  let rel = normalize(decodeURIComponent(pathname)).replace(/^([/\\])+/, "");
+  let decoded: string;
+  try {
+    decoded = decodeURIComponent(pathname);
+  } catch {
+    return new Response("Not found", { status: 404 });
+  }
+  let rel = normalize(decoded).replace(/^([/\\])+/, "");
   if (rel.includes("..")) return new Response("Not found", { status: 404 });
   if (rel === "" || rel.endsWith("/")) rel += "index.html";
   for (const candidate of [rel, `${rel}.html`, join(rel, "index.html")]) {
