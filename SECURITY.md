@@ -2,7 +2,7 @@
 
 ## Signaler une vulnérabilité
 
-Merci de **ne pas ouvrir d'issue publique**. Utilise le signalement privé de GitHub (onglet *Security* → *Report a vulnerability*) ou écris à `presidentielle.ia@gmail.com` (objet : « Sécurité »).
+Merci de **ne pas ouvrir d'issue publique**. Utilise le signalement privé de GitHub (onglet *Security* → *Report a vulnerability*) ou écris à `security@presidentielle-ia.org`.
 
 Nous répondons sous 72 h et publions un correctif dès que possible. Les signalements de bonne foi ne feront l'objet d'aucune poursuite.
 
