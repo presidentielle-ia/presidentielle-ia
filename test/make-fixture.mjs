@@ -16,9 +16,9 @@ const demo = {
     chapters: [{ id: "p1c1", number: 1, title: "Chapitre 1 : Travail", url: "https://example.org/p1c1", intro: [],
       sections: [{ id: "p1c1s1", title: "Retraites", url: "https://example.org/p1c1#retraites", intro: ["Texte."],
         measures: [
-          { id: "p1c1s1k1", key: true, text: "Maintenir l'âge légal de départ à la retraite à 64 ans" },
-          { id: "p1c1s1m1", key: false, text: "Créer une retraite par capitalisation complémentaire" },
-          { id: "p1c1s1m2", key: false, text: "Augmenter le SMIC de 5 %" },
+          { id: "p1c1s1k1", key: true, text: "Maintenir l'âge légal de départ à la retraite à 64 ans", date: "2026-10-01" },
+          { id: "p1c1s1m1", key: false, text: "Créer une retraite par capitalisation complémentaire", date: "2026-10-01" },
+          { id: "p1c1s1m2", key: false, text: "Augmenter le SMIC de 5 %", date: "2026-11-05" },
         ] }] }] }],
 };
 const programmes = [
@@ -28,4 +28,5 @@ const programmes = [
   { id: "publie", candidat: "Dominique Publié", parti: "Parti publié", statut: "publie", source: "https://example.org/publie" },
 ].sort((a, b) => a.candidat.split(" ").at(-1).localeCompare(b.candidat.split(" ").at(-1), "fr"));
 await mkdir(new URL("./fixtures/", import.meta.url), { recursive: true });
-await writeFile(new URL("./fixtures/bundle.json", import.meta.url), JSON.stringify({ generatedAt: "test", programmes }));
+const changelog = [{ date: "2026-11-08", id: "demo", ajoutees: 1, retirees: 0, total: 3, exemples: ["Augmenter le SMIC de 5 %"] }];
+await writeFile(new URL("./fixtures/bundle.json", import.meta.url), JSON.stringify({ generatedAt: "test", programmes, changelog }));

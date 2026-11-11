@@ -82,6 +82,17 @@ export interface SectionRef {
 
 /** Tous les candidats suivis, dans l'ordre alphabétique. */
 export const PROGRAMMES = (bundle as { programmes: Programme[] }).programmes;
+
+/** Changements détectés par la vérification quotidienne (plus récents d'abord). */
+export interface Change {
+  date: string;
+  id: string;
+  ajoutees: number;
+  retirees: number;
+  total: number;
+  exemples?: string[];
+}
+export const CHANGELOG: Change[] = (bundle as { changelog?: Change[] }).changelog ?? [];
 export const INTEGRATED = PROGRAMMES.filter((p): p is Integrated => p.statut === "integre" && !!p.parts);
 export const programmesById = new Map(INTEGRATED.map((p) => [p.id, p]));
 

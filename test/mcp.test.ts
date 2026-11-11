@@ -51,7 +51,7 @@ describe("protocole MCP", () => {
   it("liste les outils, tous en lecture seule", async () => {
     const { tools } = (await rpc("tools/list")).result;
     expect(tools.map((t: any) => t.name).sort()).toEqual(
-      ["comparer", "fetch", "lire_introduction", "lire_mesures", "lire_section", "lister_programmes", "mesures_cles", "rechercher", "search", "table_des_matieres"],
+      ["comparer", "fetch", "lire_introduction", "lire_mesures", "lire_section", "lister_programmes", "mesures_cles", "rechercher", "search", "suivi_programmes", "table_des_matieres"],
     );
     for (const t of tools) expect(t.annotations.readOnlyHint).toBe(true);
   });
@@ -123,6 +123,18 @@ describe("outils", () => {
   });
   it.skipIf(!LFI)("lire_introduction", async () => {
     expect(txt(await call("lire_introduction", { programme: "lfi", partie: "intro" }))).toContain("cinquième édition");
+  });
+  it("suivi_programmes : chronologie datée, plus récent d'abord, filtre par date", async () => {
+    const t = txt(await call("suivi_programmes", { programmes: ["demo"] }));
+    expect(t).toContain("8 novembre 2026");
+    expect(t).toContain("mise à jour détectée : +1");
+    expect(t.indexOf("8 novembre 2026")).toBeLessThan(t.indexOf("1er octobre 2026"));
+    const recent = txt(await call("suivi_programmes", { programmes: ["demo"], depuis: "2026-11-01" }));
+    expect(recent).not.toContain("**1er octobre 2026**");
+    expect(recent).toContain("5 novembre 2026");
+  });
+  it("les mesures datées affichent leur date de publication", async () => {
+    expect(txt(await call("lire_mesures", { ids: ["demo:p1c1s1m2"] }))).toContain("publiée le 5 novembre 2026");
   });
   it("search/fetch respectent le format ChatGPT et couvrent plusieurs programmes", async () => {
     const { results } = JSON.parse(txt(await call("search", { query: "retraite" })));

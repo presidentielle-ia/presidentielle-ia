@@ -1,6 +1,7 @@
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { z } from "zod";
 import {
+  CHANGELOG,
   INTEGRATED,
   PROGRAMMES,
   chaptersById,
@@ -17,7 +18,7 @@ import {
 import { search } from "./search.js";
 
 export const SERVER_NAME = "presidentielle-ia";
-export const SERVER_VERSION = "0.2.0";
+export const SERVER_VERSION = "0.3.0";
 export const SITE_URL = "https://presidentielle-ia.org";
 
 const pending = PROGRAMMES.filter((p) => p.statut !== "integre");
@@ -32,6 +33,7 @@ Règles d'usage :
 - Certains programmes sont partiels (encore en cours de publication) : précise-le quand tu compares, une absence de mesure peut simplement venir d'un texte incomplet.
 - Si un programme ne traite pas un sujet, dis-le au lieu de deviner. Lors d'une comparaison, signale toujours les candidats dont le programme n'est pas encore disponible ici, pour ne pas laisser croire qu'ils n'ont pas de position.
 - Les programmes évoluent pendant la campagne : lister_programmes donne pour chacun ses dates de publication, de dernière mise à jour et de dernière vérification. Mentionne-les si la fraîcheur compte.
+- Pour l'actualité des programmes (publications, nouvelles mesures, mises à jour), utilise suivi_programmes.
 - Méthode : lister_programmes pour savoir ce qui est disponible ; comparer pour un sujet transversal ; rechercher puis lire_section pour le détail.
 - Service citoyen indépendant et non officiel (${SITE_URL}), affilié à aucun parti.`;
 
@@ -55,7 +57,8 @@ const error = (t: string) => ({ content: [{ type: "text" as const, text: t }], i
 
 function fmtMeasure(programmeId: string, m: MeasureRef["measure"], indent = ""): string {
   const tag = m.key ? " **[mesure clé]**" : "";
-  return `${indent}- [${programmeId}:${m.id}]${tag} ${m.text}`;
+  const when = m.date ? ` _(publiée le ${fr(m.date)}${m.updated && m.updated !== m.date ? `, modifiée le ${fr(m.updated)}` : ""})_` : "";
+  return `${indent}- [${programmeId}:${m.id}]${tag} ${m.text}${when}`;
 }
 
 function fmtSection(p: Integrated, section: Section): string {
@@ -161,6 +164,57 @@ export function createServer(): McpServer {
     async ({ sujet, programmes }) => {
       const grouped = search(sujet, { programmes, perProgramme: 6 });
       return text(fmtGrouped(sujet, grouped, targetsOf(programmes)));
+    },
+  );
+
+
+  server.registerTool(
+    "suivi_programmes",
+    {
+      title: "Suivi des programmes (ce qui a changé)",
+      description:
+        "Chronologie des programmes : publication, nouvelles mesures annoncées (avec leur date) et mises à jour détectées par la vérification quotidienne. Pour répondre à « qu'est-ce qui a changé cette semaine ? », « quand X a-t-il publié ses mesures ? ». Filtrable par programme et par date.",
+      inputSchema: {
+        programmes: z.array(programmeEnum).max(20).optional().describe("Limiter à certains programmes (par défaut : tous)"),
+        depuis: z.string().regex(/^\d{4}-\d{2}-\d{2}$/).optional().describe("Date de début AAAA-MM-JJ (optionnel)"),
+        limite: z.number().int().min(1).max(100).optional().describe("Nombre maximum d'événements (défaut 30)"),
+      },
+      annotations: READ_ONLY,
+    },
+    async ({ programmes, depuis, limite }) => {
+      type Ev = { date: string; p: Integrated; texte: string; items: string[] };
+      const evs: Ev[] = [];
+      for (const p of targetsOf(programmes)) {
+        const byDay = new Map<string, string[]>();
+        for (const part of p.parts)
+          for (const c of part.chapters)
+            for (const sec of c.sections)
+              for (const m of sec.measures) {
+                if (!m.date) continue;
+                const list = byDay.get(m.date) ?? [];
+                list.push(`[${p.id}:${m.id}] ${m.text.length > 160 ? m.text.slice(0, 157) + "…" : m.text}`);
+                byDay.set(m.date, list);
+              }
+        for (const [d, items] of byDay) evs.push({ date: d, p, texte: `${items.length} mesure${items.length > 1 ? "s" : ""} publiée${items.length > 1 ? "s" : ""}`, items });
+        if (!byDay.size && p.dates?.publication) evs.push({ date: p.dates.publication, p, texte: `publication du programme (${p.stats.measures} mesures)`, items: [] });
+        for (const ch of CHANGELOG.filter((x) => x.id === p.id))
+          evs.push({ date: ch.date, p, texte: `mise à jour détectée : +${ch.ajoutees} / −${ch.retirees} mesures (total ${ch.total})`, items: (ch.exemples ?? []).map((e) => `nouvelle : ${e}`) });
+      }
+      const filtered = evs.filter((e) => !depuis || e.date >= depuis);
+      const last = (p: Integrated) => p.nom ?? p.candidat.split(" ").at(-1)!;
+      filtered.sort((a, b) => b.date.localeCompare(a.date) || last(a.p).localeCompare(last(b.p), "fr"));
+      const max = limite ?? 30;
+      const lines = [`# Suivi des programmes${depuis ? ` depuis le ${fr(depuis)}` : ""}`, ""];
+      lines.push("État de chaque programme :");
+      for (const p of targetsOf(programmes)) lines.push(`- ${label(p)} : ${datesLine(p) || "dates non disponibles"}`);
+      lines.push("", "Chronologie (plus récent d'abord) :");
+      if (!filtered.length) lines.push("_Aucun événement sur la période._");
+      for (const e of filtered.slice(0, max)) {
+        lines.push(`- **${fr(e.date)}** — ${label(e.p)} : ${e.texte}`);
+        for (const it of e.items.slice(0, 8)) lines.push(`  - ${it}`);
+        if (e.items.length > 8) lines.push(`  - … et ${e.items.length - 8} autres`);
+      }
+      return text(lines.join("\n") + pendingNote());
     },
   );
 

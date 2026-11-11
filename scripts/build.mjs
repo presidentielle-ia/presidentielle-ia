@@ -66,6 +66,7 @@ const byName = (a, b) => lastName(a).localeCompare(lastName(b), "fr");
 programmes.sort(byName);
 
 await mkdir(new URL("data/", root), { recursive: true });
-await writeFile(new URL("data/bundle.json", root), JSON.stringify({ generatedAt: new Date().toISOString(), programmes }));
+const changelog = existsSync(new URL("data/changelog.json", root)) ? JSON.parse(await readFile(new URL("data/changelog.json", root), "utf8")).slice(0, 100) : [];
+await writeFile(new URL("data/bundle.json", root), JSON.stringify({ generatedAt: new Date().toISOString(), programmes, changelog }));
 
 console.log(`bundle : ${programmes.length} entrées, ${programmes.filter((p) => p.statut === "integre").length} intégrée(s)${RIGHTS ? " (droits de réutilisation exigés)" : ""}`);
