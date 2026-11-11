@@ -1,0 +1,18 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "org.presidentielle-ia/presidentielle-ia",
+  "title": "Présidentielle IA",
+  "description": "Interroge les programmes officiels de la présidentielle 2027, cités mot pour mot. Neutre.",
+  "version": "0.2.0",
+  "websiteUrl": "https://presidentielle-ia.org",
+  "repository": {
+    "url": "https://github.com/presidentielle-ia/presidentielle-ia",
+    "source": "github"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://presidentielle-ia.org/mcp"
+    }
+  ]
+}
