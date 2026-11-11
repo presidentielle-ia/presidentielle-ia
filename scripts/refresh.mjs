@@ -23,7 +23,12 @@ const registry = JSON.parse(await readFile(new URL("programmes/registry.json", r
 const meta = await readJson("meta.json", {});
 const watch = await readJson("watch.json", {});
 const changelog = await readJson("changelog.json", []);
-const summary = { date: today, changed: [], unchanged: [], errors: [], anomalies: [], watchChanged: [], watchErrors: [] };
+const summary = { date: today, changed: [], unchanged: [], errors: [], anomalies: [], suspicious: [], watchChanged: [], watchErrors: [] };
+
+// Texte suspect : instructions adressées à une IA cachées dans un programme
+// (injection de consignes). Signalé pour vérification humaine.
+const SUSPECT = /ignore[rz]? (les|toutes|tout|previous|all)|instructions? (précédentes|ci-dessus|système)|system prompt|en tant qu['’]ia|tu es (un|une) (ia|assistant|modèle)|chatgpt|openai|anthropic|\bllm\b|<\s*script|vote[rz]? pour (moi|nous|[A-ZÉ])/i;
+const suspects = (texts) => texts.filter((t) => SUSPECT.test(t)).map((t) => t.slice(0, 200));
 
 const measures = (d) => d.parts.flatMap((p) => p.chapters.flatMap((c) => c.sections.flatMap((s) => s.measures)));
 const hashOf = (d) => createHash("sha256").update(JSON.stringify(measures(d).map((m) => [m.id, m.text]))).digest("hex").slice(0, 16);
@@ -57,6 +62,8 @@ for (const entry of registry.programmes) {
     const added = [...after].filter((t) => !before.has(t));
     const removed = [...before].filter((t) => !after.has(t));
     m.updatedAt = today;
+    const sus = suspects(added);
+    if (sus.length) summary.suspicious.push({ id: entry.id, textes: sus });
     const change = { date: today, id: entry.id, ajoutees: added.length, retirees: removed.length, total: fresh.stats.measures, exemples: added.slice(0, 3).map((t) => t.slice(0, 160)) };
     changelog.unshift(change);
     summary.changed.push(change);
