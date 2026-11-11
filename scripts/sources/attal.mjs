@@ -28,6 +28,8 @@ const items = (xml) =>
 const priorites = items(await get(`${BASE}/flux/priorites.xml`));
 const mesures = items(await get(`${BASE}/flux/mesures.xml`));
 
+const toIso = (d) => (d && !Number.isNaN(Date.parse(d)) ? new Date(d).toISOString().slice(0, 10) : null);
+
 // Regroupement par thématique (première catégorie de chaque mesure), par ordre alphabétique.
 const byTheme = new Map();
 for (const m of mesures) {
@@ -53,14 +55,13 @@ const chapters = [...byTheme.entries()]
           intro: [],
           measures: list
             .sort((a, b) => a.title.localeCompare(b.title, "fr"))
-            .map((m, k) => ({ id: `${cId}s1m${k + 1}`, key: false, text: `${m.title} : ${m.description}`, url: m.link })),
+            .map((m, k) => ({ id: `${cId}s1m${k + 1}`, key: false, text: `${m.title} : ${m.description}`, url: m.link, date: toIso(m.pubDate) ?? undefined, updated: toIso(m.updated) ?? undefined })),
         },
       ],
     };
   });
 
 // Dates officielles du flux : première publication et dernière modification.
-const toIso = (d) => (d && !Number.isNaN(Date.parse(d)) ? new Date(d).toISOString().slice(0, 10) : null);
 const pubs = mesures.map((m) => toIso(m.pubDate)).filter(Boolean).sort();
 const upds = mesures.map((m) => toIso(m.updated) ?? toIso(m.pubDate)).filter(Boolean).sort();
 

@@ -21,6 +21,8 @@ const chapters = themes.map((t, i) => {
       key: false,
       text: `${plain(m.titre)} : ${plain(m.engagement)}`,
       url: `${BASE}/projet/mesure/${m.slug}`,
+      date: m.creeIso?.slice(0, 10),
+      updated: m.majIso?.slice(0, 10),
     }));
   return {
     id: cId,

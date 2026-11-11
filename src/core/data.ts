@@ -7,6 +7,9 @@ export interface Measure {
   text: string;
   /** page dédiée à la mesure sur le site officiel, si elle existe */
   url?: string;
+  /** date de publication (AAAA-MM-JJ) et de dernière modification, si la source les donne */
+  date?: string;
+  updated?: string;
 }
 export interface Section {
   id: string;
