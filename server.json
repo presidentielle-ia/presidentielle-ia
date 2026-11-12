@@ -3,7 +3,7 @@
   "name": "org.presidentielle-ia/presidentielle-ia",
   "title": "Présidentielle IA",
   "description": "Interroge les programmes officiels de la présidentielle 2027, cités mot pour mot. Neutre.",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "websiteUrl": "https://presidentielle-ia.org",
   "repository": {
     "url": "https://github.com/presidentielle-ia/presidentielle-ia",
@@ -13,6 +13,15 @@
     {
       "type": "streamable-http",
       "url": "https://presidentielle-ia.org/mcp"
+    }
+  ],
+  "icons": [
+    {
+      "src": "https://presidentielle-ia.org/presse/logo-1024.png",
+      "mimeType": "image/png",
+      "sizes": [
+        "1024x1024"
+      ]
     }
   ]
 }
