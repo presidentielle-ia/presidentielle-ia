@@ -1,5 +1,5 @@
 {
-  "$comment": "Candidats suivis pour la présidentielle 2027 (liste non exhaustive : franceinfo recense 36 déclarations au 9/11/2026). statut : integre (texte disponible dans l'outil) | publie (programme officiel publié, pas encore intégré) | attendu (pas encore de programme officiel). etendue : complet | partiel. Vérifié le 2026-11-10. reutilisation : licence (licence ouverte compatible) | autorisation (accord écrit obtenu) | non (tous droits réservés, pas d'accord) ; avec REQUIRE_REUSE_RIGHTS=1, seuls licence/autorisation sont intégrés ; retire = texte retiré à la demande de l'ayant droit (tous modes).",
+  "$comment": "Candidats suivis pour la présidentielle 2027 (32 candidatures déclarées retenues selon la règle de couverture (déclaration publique + 2 médias nationaux) ; franceinfo en recense 36 au 9/11/2026). statut : integre (texte disponible dans l'outil) | publie (programme officiel publié, pas encore intégré) | attendu (pas encore de programme officiel). etendue : complet | partiel. Vérifié le 2026-11-13. reutilisation : licence (licence ouverte compatible) | autorisation (accord écrit obtenu) | non (tous droits réservés, pas d'accord) ; avec REQUIRE_REUSE_RIGHTS=1, seuls licence/autorisation sont intégrés ; retire = texte retiré à la demande de l'ayant droit (tous modes).",
   "programmes": [
     {
       "id": "arthaud",
@@ -56,6 +56,21 @@
       "note": "Pages programme encore vides"
     },
     {
+      "id": "bouamrane",
+      "candidat": "Karim Bouamrane",
+      "parti": "Parti socialiste",
+      "statut": "attendu",
+      "note": "Candidature annoncée le 09/06/2026"
+    },
+    {
+      "id": "branco",
+      "candidat": "Juan Branco",
+      "parti": "Les Ruches",
+      "statut": "attendu",
+      "source": "https://ruches.org/",
+      "note": "Candidature annoncée le 19/12/2025"
+    },
+    {
       "id": "dupont-aignan",
       "candidat": "Nicolas Dupont-Aignan",
       "nom": "Dupont-Aignan",
@@ -65,6 +80,21 @@
       "note": "Mise à jour du projet pour 2027 en cours"
     },
     {
+      "id": "durif",
+      "candidat": "Sylvain Durif",
+      "parti": "Sans étiquette",
+      "statut": "attendu",
+      "note": "Candidature annoncée le 23/08/2026"
+    },
+    {
+      "id": "egger",
+      "candidat": "Clara Egger",
+      "parti": "Solution démocratique",
+      "statut": "attendu",
+      "source": "https://solutiondemocratique.fr/",
+      "note": "Candidature annoncée le 15/04/2026"
+    },
+    {
       "id": "glucksmann",
       "candidat": "Raphaël Glucksmann",
       "parti": "Place publique / PS",
@@ -72,6 +102,29 @@
       "etendue": "partiel",
       "source": "https://glucks2027.fr/wp-content/uploads/2026/11/livret_progr_revolution_ecologique_2027.pdf",
       "note": "1er livret publié (écologie), programme annoncé pour décembre"
+    },
+    {
+      "id": "kazib",
+      "candidat": "Anasse Kazib",
+      "parti": "Révolution permanente",
+      "statut": "attendu",
+      "source": "https://www.revolutionpermanente.fr/",
+      "note": "Candidature annoncée le 01/06/2026"
+    },
+    {
+      "id": "labib",
+      "candidat": "Selma Labib",
+      "parti": "NPA – Révolutionnaires",
+      "statut": "attendu",
+      "source": "https://npa-revolutionnaires.org/",
+      "note": "Candidature annoncée le 17/06/2026"
+    },
+    {
+      "id": "lalanne",
+      "candidat": "Francis Lalanne",
+      "parti": "France Libre",
+      "statut": "attendu",
+      "note": "Candidature annoncée le 18/08/2026"
     },
     {
       "id": "le-pen",
@@ -92,6 +145,22 @@
       "note": "Programme thématique publié (5 thèmes), intégration en cours"
     },
     {
+      "id": "markovic",
+      "candidat": "Mira Markovic",
+      "parti": "Parti animaliste",
+      "statut": "attendu",
+      "source": "https://parti-animaliste.fr/",
+      "note": "Candidature annoncée le 02/10/2026"
+    },
+    {
+      "id": "mathieu",
+      "candidat": "Benoît Mathieu",
+      "parti": "Sans étiquette",
+      "statut": "attendu",
+      "source": "https://benoitmathieu2027.fr/",
+      "note": "Candidature annoncée le 30/03/2026"
+    },
+    {
       "id": "lfi",
       "candidat": "Jean-Luc Mélenchon",
       "parti": "La France insoumise",
@@ -104,6 +173,22 @@
       "reutilisation": "non"
     },
     {
+      "id": "mikolajczak",
+      "candidat": "Antoine Mikolajczak",
+      "parti": "Équinoxe",
+      "statut": "attendu",
+      "source": "https://parti-equinoxe.fr/",
+      "note": "Campagne lancée le 27/06/2026"
+    },
+    {
+      "id": "mlekuz",
+      "candidat": "Manolo Mlekuz",
+      "parti": "Trajectoire",
+      "statut": "attendu",
+      "source": "https://trajectoire2027.fr/",
+      "note": "Candidature annoncée début 2026"
+    },
+    {
       "id": "philippe",
       "candidat": "Édouard Philippe",
       "parti": "Horizons",
@@ -114,6 +199,27 @@
       "note": "Programme thématique publié (16 thèmes, mis à jour le 12/11/2026), intégration en cours",
       "licence": "Tous droits réservés",
       "reutilisation": "non"
+    },
+    {
+      "id": "philippot",
+      "candidat": "Florian Philippot",
+      "parti": "Les Patriotes",
+      "statut": "attendu",
+      "note": "Candidature annoncée le 09/05/2026"
+    },
+    {
+      "id": "platret",
+      "candidat": "Gilles Platret",
+      "parti": "Divers droite",
+      "statut": "attendu",
+      "note": "Candidature annoncée le 08/10/2026"
+    },
+    {
+      "id": "polony",
+      "candidat": "Natacha Polony",
+      "parti": "Sans étiquette",
+      "statut": "attendu",
+      "note": "Candidature annoncée le 14/10/2026"
     },
     {
       "id": "retailleau",
