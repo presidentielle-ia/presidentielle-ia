@@ -66,9 +66,10 @@
       "id": "branco",
       "candidat": "Juan Branco",
       "parti": "Les Ruches",
-      "statut": "attendu",
-      "source": "https://ruches.org/",
-      "note": "Candidature annoncée le 19/12/2025"
+      "statut": "publie",
+      "etendue": "complet",
+      "source": "https://ruches.org/le-projet",
+      "note": "Programme « La Voie » publié (845 mesures, 24 thèmes), intégration en cours"
     },
     {
       "id": "dupont-aignan",
