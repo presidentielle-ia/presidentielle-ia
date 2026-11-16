@@ -91,9 +91,11 @@
       "id": "egger",
       "candidat": "Clara Egger",
       "parti": "Solution démocratique",
-      "statut": "attendu",
-      "source": "https://solutiondemocratique.fr/",
-      "note": "Candidature annoncée le 15/04/2026"
+      "statut": "publie",
+      "etendue": "complet",
+      "source": "https://solutiondemocratique.fr/wp-content/uploads/2026/11/Programme-de-Solution-Democratique-a-lelection-presidentielle-2027.pdf",
+      "publieLe": "2026-11-04",
+      "note": "Programme publié (PDF, 28 pages), intégration en cours"
     },
     {
       "id": "glucksmann",
@@ -157,9 +159,10 @@
       "id": "mathieu",
       "candidat": "Benoît Mathieu",
       "parti": "Sans étiquette",
-      "statut": "attendu",
-      "source": "https://benoitmathieu2027.fr/",
-      "note": "Candidature annoncée le 30/03/2026"
+      "statut": "publie",
+      "etendue": "complet",
+      "source": "https://benoitmathieu2027.fr/programme",
+      "note": "Programme publié (convention citoyenne constituante, référendum), intégration en cours"
     },
     {
       "id": "lfi",
