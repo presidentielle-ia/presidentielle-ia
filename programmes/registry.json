@@ -180,9 +180,10 @@
       "id": "mikolajczak",
       "candidat": "Antoine Mikolajczak",
       "parti": "Équinoxe",
-      "statut": "attendu",
-      "source": "https://parti-equinoxe.fr/",
-      "note": "Campagne lancée le 27/06/2026"
+      "statut": "publie",
+      "etendue": "partiel",
+      "source": "https://parti-equinoxe.fr/programme-2027/",
+      "note": "Programme synthétique publié (12 mesures phares), programme complet annoncé, intégration en cours"
     },
     {
       "id": "mlekuz",
