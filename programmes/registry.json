@@ -1,5 +1,5 @@
 {
-  "$comment": "Candidats suivis pour la présidentielle 2027 (32 candidatures déclarées retenues selon la règle de couverture (déclaration publique + 2 médias nationaux) ; franceinfo en recense 36 au 9/11/2026). statut : integre (texte disponible dans l'outil) | publie (programme officiel publié, pas encore intégré) | attendu (pas encore de programme officiel). etendue : complet | partiel. Vérifié le 2026-11-13. reutilisation : licence (licence ouverte compatible) | autorisation (accord écrit obtenu) | non (tous droits réservés, pas d'accord) ; avec REQUIRE_REUSE_RIGHTS=1, seuls licence/autorisation sont intégrés ; retire = texte retiré à la demande de l'ayant droit (tous modes).",
+  "$comment": "Candidats suivis pour la présidentielle 2027 (33 candidatures déclarées retenues selon la règle de couverture (déclaration publique + 2 médias nationaux) ; franceinfo en recense 36 au 9/11/2026). statut : integre (texte disponible dans l'outil) | publie (programme officiel publié, pas encore intégré) | attendu (pas encore de programme officiel). etendue : complet | partiel. Vérifié le 2026-11-20. reutilisation : licence (licence ouverte compatible) | autorisation (accord écrit obtenu) | non (tous droits réservés, pas d'accord) ; avec REQUIRE_REUSE_RIGHTS=1, seuls licence/autorisation sont intégrés ; retire = texte retiré à la demande de l'ayant droit (tous modes).",
   "programmes": [
     {
       "id": "arthaud",
@@ -272,6 +272,15 @@
       "source": "https://lesecologistes.fr/document/3N4JsAEmq6vsx42IITGNZa/vdef-programme-1.pdf",
       "note": "Version de référence communiquée par l'équipe de campagne le 12/11/2026 (candidature soumise au vote du parti le 13 décembre)",
       "reutilisation": "non"
+    },
+    {
+      "id": "villepin",
+      "candidat": "Dominique de Villepin",
+      "nom": "de Villepin",
+      "parti": "La France humaniste",
+      "statut": "attendu",
+      "source": "https://lafrancehumaniste.fr/",
+      "note": "Candidature annoncée le 20/11/2026 ; projet « France 2027 » en construction par chantiers"
     },
     {
       "id": "zemmour",
