@@ -1,5 +1,5 @@
 {
-  "$comment": "Candidats suivis pour la présidentielle 2027 (33 candidatures déclarées retenues selon la règle de couverture (déclaration publique + 2 médias nationaux) ; franceinfo en recense 36 au 9/11/2026). statut : integre (texte disponible dans l'outil) | publie (programme officiel publié, pas encore intégré) | attendu (pas encore de programme officiel). etendue : complet | partiel. Vérifié le 2026-11-20. reutilisation : licence (licence ouverte compatible) | autorisation (accord écrit obtenu) | non (tous droits réservés, pas d'accord) ; avec REQUIRE_REUSE_RIGHTS=1, seuls licence/autorisation sont intégrés ; retire = texte retiré à la demande de l'ayant droit (tous modes).",
+  "$comment": "Candidats suivis pour la présidentielle 2027 (33 candidatures déclarées retenues, dont 1 retirée, selon la règle de couverture (déclaration publique + 2 médias nationaux) ; franceinfo en recense 36 au 9/11/2026). statut : integre (texte disponible dans l'outil) | publie (programme officiel publié, pas encore intégré) | attendu (pas encore de programme officiel). etendue : complet | partiel. Vérifié le 2026-11-22. reutilisation : licence (licence ouverte compatible) | autorisation (accord écrit obtenu) | non (tous droits réservés, pas d'accord) ; avec REQUIRE_REUSE_RIGHTS=1, seuls licence/autorisation sont intégrés ; retire = texte retiré à la demande de l'ayant droit (tous modes).",
   "programmes": [
     {
       "id": "arthaud",
@@ -257,10 +257,9 @@
       "id": "ruffin",
       "candidat": "François Ruffin",
       "parti": "Debout !",
-      "statut": "publie",
-      "etendue": "partiel",
+      "statut": "attendu",
       "source": "https://nouspresident.fr/notre-programme/",
-      "note": "Cahiers de campagne publiés"
+      "note": "Candidature retirée le 21/11/2026"
     },
     {
       "id": "tondelier",
@@ -278,9 +277,11 @@
       "candidat": "Dominique de Villepin",
       "nom": "de Villepin",
       "parti": "La France humaniste",
-      "statut": "attendu",
-      "source": "https://lafrancehumaniste.fr/",
-      "note": "Candidature annoncée le 20/11/2026 ; projet « France 2027 » en construction par chantiers"
+      "statut": "publie",
+      "etendue": "complet",
+      "source": "https://lafrancehumaniste.fr/programme/reussir-a-nouveau/",
+      "publieLe": "2026-11-20",
+      "note": "Programme « Réussir à nouveau » publié (258 propositions, 25 chapitres), intégration en cours"
     },
     {
       "id": "zemmour",
