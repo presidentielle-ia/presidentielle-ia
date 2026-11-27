@@ -25,8 +25,8 @@ const txt = (r: any) => r.content[0].text as string;
 const LFI = programmesById.has("lfi");
 
 describe("données", () => {
-  it.skipIf(!LFI)("le programme LFI contient les 1 069 mesures annoncées", () => {
-    expect(programmesById.get("lfi")!.stats).toMatchObject({ parts: 6, chapters: 23, sections: 111, measures: 1069, keyMeasures: 107 });
+  it.skipIf(!LFI)("le programme LFI contient les 1 068 mesures (1 069 avant le retrait du 27/11/2026)", () => {
+    expect(programmesById.get("lfi")!.stats).toMatchObject({ parts: 6, chapters: 23, sections: 111, measures: 1068, keyMeasures: 107 });
   });
   it("les candidats sont triés par nom de famille", () => {
     const names = PROGRAMMES.map((p) => p.candidat.split(" ").at(-1)!);
